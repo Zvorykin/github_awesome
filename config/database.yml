@@ -1,0 +1,10 @@
+default: &default
+  adapter: postgres
+
+development:
+  <<: *default
+  url: postgres://postgres:postgres@localhost:5432/github_awesome_dev
+
+test:
+  <<: *default
+  url: postgres://postgres:postgres@localhost:5432/github_awesome_test

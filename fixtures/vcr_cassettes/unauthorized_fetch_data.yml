@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.github.com/graphql
+    body:
+      encoding: UTF-8
+      string: '{"query":"query IntrospectionQuery {\n  __schema {\n    queryType {\n      name\n    }\n    mutationType
+        {\n      name\n    }\n    subscriptionType {\n      name\n    }\n    types
+        {\n      ...FullType\n    }\n    directives {\n      name\n      description\n      locations\n      args
+        {\n        ...InputValue\n      }\n    }\n  }\n}\n\nfragment FullType on __Type
+        {\n  kind\n  name\n  description\n  fields(includeDeprecated: true) {\n    name\n    description\n    args
+        {\n      ...InputValue\n    }\n    type {\n      ...TypeRef\n    }\n    isDeprecated\n    deprecationReason\n  }\n  inputFields
+        {\n    ...InputValue\n  }\n  interfaces {\n    ...TypeRef\n  }\n  enumValues(includeDeprecated:
+        true) {\n    name\n    description\n    isDeprecated\n    deprecationReason\n  }\n  possibleTypes
+        {\n    ...TypeRef\n  }\n}\n\nfragment InputValue on __InputValue {\n  name\n  description\n  type
+        {\n    ...TypeRef\n  }\n  defaultValue\n}\n\nfragment TypeRef on __Type {\n  kind\n  name\n  ofType
+        {\n    kind\n    name\n    ofType {\n      kind\n      name\n      ofType
+        {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType
+        {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType
+        {\n                kind\n                name\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}","operationName":"IntrospectionQuery","variables":{}}'
+    headers:
+      Authorization:
+      - bearer wrong_token
+      User-Agent:
+      - Faraday v1.1.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Sun, 08 Nov 2020 17:26:47 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '83'
+      Server:
+      - GitHub.com
+      Status:
+      - 401 Unauthorized
+      X-Github-Media-Type:
+      - github.v4; format=json
+      X-Ratelimit-Limit:
+      - '0'
+      X-Ratelimit-Remaining:
+      - '0'
+      X-Ratelimit-Reset:
+      - '1604860007'
+      X-Ratelimit-Used:
+      - '0'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+        X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      Vary:
+      - Accept-Encoding, Accept, X-Requested-With
+      X-Github-Request-Id:
+      - D020:AD3C:1DD9976:224B24B:5FA82A57
+    body:
+      encoding: UTF-8
+      string: '{"message":"Bad credentials","documentation_url":"https://docs.github.com/graphql"}'
+  recorded_at: Sun, 08 Nov 2020 17:26:47 GMT
+recorded_with: VCR 6.0.0
