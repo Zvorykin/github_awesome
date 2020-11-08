@@ -1,24 +1,18 @@
-# README
+# Github awesome
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple pet project to take a look at fetching data using GraphQL API.
 
-Things you may want to cover:
+Ruby 2.7.1
 
-* Ruby version
+As usual
 
-* System dependencies
+```
+bundle
+yarn
+rails db:create db:migrate
+./bin/webpack-dev-server 
 
-* Configuration
+http://localhost:3000/
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+but also need to add ENV variable `GITHUB_TOKEN`, for example by creating .env file containing `GITHUB_TOKEN=123456789`
